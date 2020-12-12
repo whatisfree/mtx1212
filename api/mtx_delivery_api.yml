@@ -1,0 +1,20 @@
+
+name: mtx管理员发货接口请求
+base_url: http://121.42.15.146:9090/
+#variables:
+#    username: shamo
+#    login_pwd: 123456
+#    msg: 登录成功
+request:
+    url: mtx/admin.php?s=/order/delivery.html
+    method: POST
+    headers:
+        X-Requested-With: "XMLHttpRequest"
+    data:
+        express_number: K73487736
+        id: $order_id
+        express_id: 1
+        user_id: $user_id
+validate:
+    - eq: ["status_code", 200]
+

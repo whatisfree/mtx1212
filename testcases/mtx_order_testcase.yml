@@ -1,0 +1,19 @@
+
+config:
+    name: "mtx 下单 testcase"
+
+
+teststeps:
+-
+    name: mtx login test
+    api: api/mtx_login_api.yml
+    validate:
+        - eq: [content.msg, 登录成功]
+-
+    name: mtx order test
+    api: api/mtx_order_api.yml
+    validate:
+        - eq: ["status_code", 200]
+
+
+

@@ -1,0 +1,19 @@
+
+name: mtx登录接口请求
+base_url: http://121.42.15.146:9090/
+#以下为一组默认能成功登录的账号密码
+variables:
+    accounts: Apple2020
+    pwd: 123456
+
+request:
+    url: mtx/index.php?s=/index/user/login.html
+    method: POST
+    headers:
+        X-Requested-With: "XMLHttpRequest"
+    data:
+        accounts: $accounts
+        pwd: $pwd
+validate:
+    - eq: ["status_code", 200]
+    - eq: [content.msg,$msg]

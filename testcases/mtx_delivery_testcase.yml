@@ -1,0 +1,43 @@
+
+config:
+    name: "mtx 发货 testcase"
+
+
+teststeps:
+-
+    name: mtx login test
+    api: api/mtx_login_api.yml
+    validate:
+        - eq: [content.msg, 登录成功]
+-
+    name: mtx order test
+    api: api/mtx_order_api.yml
+    extract:
+        - jump_url: content.data.jump_url
+        - order_id: content.data.order.id
+        - user_id: content.data.order.user_id
+    validate:
+        - eq: ["status_code", 200]
+-
+    name: mtx jump test(order到pay的中间环节)
+    api: api/mtx_jump_api.yml
+    extract:
+        - location_url: headers.location
+    validate:
+        - eq: ["status_code", 302]
+-
+    name: mtx pay test
+    api: api/mtx_pay_api.yml
+    validate:
+        - eq: ["status_code", 200]
+-
+    name: mtx admin login test
+    api: api/mtx_admin_login_api.yml
+    validate:
+        - eq: ["status_code", 200]
+-
+    name: mtx delivery test
+    api: api/mtx_delivery_api.yml
+    validate:
+        - eq: ["status_code", 200]
+

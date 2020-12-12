@@ -1,0 +1,10 @@
+
+config:
+    name: "mtx order testsuite"
+
+
+testcases:
+-
+    name: 下单接口测试用例
+    testcase: testcases/mtx_order_testcase.yml
+

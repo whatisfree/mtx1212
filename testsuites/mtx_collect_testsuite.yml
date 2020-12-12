@@ -1,0 +1,10 @@
+
+config:
+    name: "mtx collect testsuite"
+
+
+testcases:
+-
+    name: 收货接口测试用例
+    testcase: testcases/mtx_collect_testcase.yml
+

@@ -1,0 +1,10 @@
+
+config:
+    name: "mtx pay testsuite"
+
+
+testcases:
+-
+    name: 支付接口测试用例
+    testcase: testcases/mtx_pay_testcase.yml
+

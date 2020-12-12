@@ -1,0 +1,22 @@
+
+name: mtx order请求
+base_url: http://121.42.15.146:9090/
+#variables:
+#    accounts: Apple2020
+#    pwd: 123456
+#    msg: 登录成功
+request:
+    url: mtx/index.php?s=/index/buy/add.html
+    method: POST
+    headers:
+        X-Requested-With: "XMLHttpRequest"
+    data:
+        goods_id: 1
+        stock: 1
+        buy_type: goods
+        address_id: 1290
+        payment_id: 1
+        spec: ""
+validate:
+    - eq: ["status_code", 200]
+

@@ -1,0 +1,10 @@
+
+config:
+    name: "mtx comment testsuite"
+
+
+testcases:
+-
+    name: 评论接口测试用例
+    testcase: testcases/mtx_comment_testcase.yml
+

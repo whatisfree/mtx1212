@@ -1,0 +1,20 @@
+
+name: mtx 评论接口请求
+base_url: http://121.42.15.146:9090/
+#variables:
+#    accounts: Apple2020
+#    pwd: 123456
+#    msg: 登录成功
+request:
+    url: mtx/index.php?s=/index/order/commentssave.html
+    method: POST
+    headers:
+        X-Requested-With: "XMLHttpRequest"
+    data:
+        rating[]: '5'
+        content[]: '发货快速，质量不错，下次继续'
+        goods_id[]: 1
+        id: $order_id
+validate:
+    - eq: ["status_code", 200]
+    - eq: [content.msg, 评论成功]

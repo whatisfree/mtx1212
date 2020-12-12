@@ -1,0 +1,18 @@
+
+name: mtx 收货接口请求
+base_url: http://121.42.15.146:9090/
+#variables:
+#    accounts: Apple2020
+#    pwd: 123456
+request:
+    #url: mtx/index.php?s=/index/order/collect.html
+    url: mtx/admin.php?s=/order/collect.html
+    method: POST
+    headers:
+        X-Requested-With: "XMLHttpRequest"
+    data:
+        id: $order_id
+        value: $user_id
+validate:
+    - eq: ["status_code", 200]
+    - eq: [content.msg, 收货成功]

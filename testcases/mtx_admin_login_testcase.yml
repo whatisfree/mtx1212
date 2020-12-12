@@ -1,0 +1,13 @@
+
+config:
+    name: "mtx 管理员登录 testcase"
+
+
+teststeps:
+-
+    name: mtx admin login test
+    api: api/mtx_admin_login_api.yml
+    validate:
+        - eq: ["status_code", 200]
+
+

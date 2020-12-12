@@ -1,0 +1,15 @@
+
+name: mtx支付请求
+base_url: http://121.42.15.146:9090/
+
+request:
+    url: $location_url
+    method: GET
+    headers:
+        X-Requested-With: "XMLHttpRequest"
+    #data:
+
+validate:
+    - eq: ["status_code", 200]
+    - contains: [content,支付成功]
+

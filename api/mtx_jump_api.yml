@@ -1,0 +1,17 @@
+
+name: mtx获取jump请求后的location的url
+base_url: http://121.42.15.146:9090/
+#variables:
+#    accounts: Apple2020
+#    pwd: 123456
+#    msg: 登录成功
+request:
+    url: $jump_url
+    method: GET
+    headers:
+        X-Requested-With: "XMLHttpRequest"
+    #data:
+    allow_redirects: False
+validate:
+    - eq: ["status_code", 302]
+
